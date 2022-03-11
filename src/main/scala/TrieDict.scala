@@ -8,9 +8,9 @@ import scala.annotation.tailrec
   alphabet size to the difference between the ascii code z - 0, which covers at least the 0-9 A-Z a-Z and some
   punctuation characters. I have not checked with corners cases!.
 
-  A possible calculation is the size of the alphabet (a) * avg word length (w) * number of words (N), O(a*w*N) -> O(N).
-  Time complexity search is O(1), because we can get the result in one pass, insertion is O(N) because we have to
-  visit N nodes.
+  A possible calculation is the size of the alphabet (a) * avg word length (w) * number of words (N), in terms of 
+  space O(a*w*N). I terms of time complexity is in the best case O(1) for one char and O(N) for the longest word.
+  So it will be the avg of the word length.
 
   Consulted info for the code: https://en.wikipedia.org/wiki/Trie
  */
