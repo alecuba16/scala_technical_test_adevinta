@@ -1,0 +1,16 @@
+.idea
+.bsp
+/target/scala-2.12/classes/
+/target/scala-2.12/test-classes/
+/target/scala-2.12/test-zinc/
+/target/scala-2.12/update/
+/target/scala-2.12/zinc/
+/target/global-logging/
+/target/streams/
+/target/task-temp-directory/
+/target/test-reports/
+/target/.history3
+/project/target/config-classes/
+/project/target/scala-2.12/
+/project/target/streams/
+/project/project/
