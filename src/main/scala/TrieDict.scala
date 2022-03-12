@@ -58,13 +58,13 @@ object TrieDict {
     // Rec case
     // From char to number
     val childIndexKey    = word.charAt(charPos) - Char0
-    // Create empty child
-    val nextItem = node.child(childIndexKey).getOrElse(TrieDict.emptyNode)
-    // Continue generating the following chars in a next call
-    val newTreeNode  = addNodeRec(nextItem, word, occurrences, charPos + 1)
-    // Add the new tree to the current child position for the current word, it could be
-    val newNext  = node.child.updated(childIndexKey, Some(newTreeNode))
-    // Clone the current node, but with the new child tree
-    node.copy(child = newNext)
+    // Get the current char if defined (if there is a tree) or create a new subtree if there is no char
+    val childSubTree = node.child(childIndexKey).getOrElse(TrieDict.emptyNode)
+    // Continue visiting/generating the following chars in a next calls
+    val updatedChildSubTree  = addNodeRec(childSubTree, word, occurrences, charPos + 1)
+    // update the current child at the current char pos with the returned subtree
+    val updatedChild  = node.child.updated(childIndexKey, Some(updatedChildSubTree))
+    // Clone the current node, but change the old children with the new ones
+    node.copy(child = updatedChild)
   }
 }
